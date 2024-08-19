@@ -30,8 +30,3 @@ mongoose.connect(process.env.MONGO_URL).then( // start server only when mongo co
 
 // Using Routes
 app.use("/auth/google", authRoutes);
-
-app.get("/", (req, res) => {
-    console.log(req.user);
-    return res.send(req.user);
-})
