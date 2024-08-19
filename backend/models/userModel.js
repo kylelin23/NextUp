@@ -5,11 +5,13 @@ const userSchema = mongoose.Schema(
     {
         username: {
             type: String,
-            required: false
+            required: false,
+            unique: true
         },
         email: {
             type: String,
-            required: true
+            required: true,
+            unique: true,
         },
         realname: {
             type: String,
@@ -21,7 +23,7 @@ const userSchema = mongoose.Schema(
         }, 
         friends: {
             type: Array,
-            required: true,
+            required: true
         },
         friendrequests:{
             type: Array,
@@ -33,7 +35,8 @@ const userSchema = mongoose.Schema(
         },
         googleId: {
             type: String,
-            required: true
+            required: true,
+            unique: true
         }
     }
 )
