@@ -23,6 +23,14 @@ const userSchema = mongoose.Schema(
             type: Array,
             required: true,
         },
+        friendrequests:{
+            type: Array,
+            required: true,
+        },
+        groupinvites:{
+            type: Array,
+            required: true
+        },
         googleId: {
             type: String,
             required: true

@@ -10,6 +10,7 @@ const passport = require("./config/passport");
 // Models
 const userModel = require("./models/userModel");
 const groupModel = require("./models/groupModel");
+const evenModel = require("./models/groupModel");
 
 // Backend Setup
 const app = express();
