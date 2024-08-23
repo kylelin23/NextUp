@@ -10,10 +10,10 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'black', // Color for active icons
-        tabBarInactiveTintColor: 'gray', // Color for inactive icons
+        tabBarActiveTintColor: 'white', // Color for active icons
+        tabBarInactiveTintColor: 'black', // Color for inactive icons
         tabBarStyle: {
-          backgroundColor: 'rgb(3, 252, 223)', // Red background color for the tab bar
+          backgroundColor: 'rgb(193, 107, 199)', // Red background color for the tab bar
           borderTopWidth: 0, // Remove border line at the top of the tab bar
           paddingTop: 10,
           paddingBottom: 10,
