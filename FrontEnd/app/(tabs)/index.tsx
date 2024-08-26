@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
     <View style = {styles.screen}>
       <View style = {styles.navBar}>
-        <Text>All</Text>
-        <Text>Group</Text>
+        <Pressable onPress={() => alert('Showing all events')}>
+          <Text>All</Text>
+        </Pressable>
+        <Pressable onPress = {() => alert('Dropdown menu appears')}>
+          <Text>Group</Text>
+        </Pressable>
       </View>
       <Text style = {styles.bigCountdown}>10:00:00:00</Text>
       <Text style = {{fontSize: 20}}>Weekend Whip Karaoke</Text>
