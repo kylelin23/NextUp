@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
 
@@ -13,7 +13,6 @@ export default function HomeScreen() {
     {text: 'Fight Serpentine: 22:00:00:00'}, 
     {text: 'Ghost Whip Karaoke: 27:00:00:00'}, 
     {text: 'Pirate Whip Karaoke: 29:00:00:00'}, 
-    {text: 'Expand All'},
   ];
 
   const allData = [
@@ -21,7 +20,6 @@ export default function HomeScreen() {
     {text: 'Spinjitzu Class: 20:00:00:00'}, 
     {text: 'Fight Serpentine: 22:00:00:00'}, 
     {text: 'Weekend Whip Karaoke 2: 24:00:00:00'}, 
-    {text: 'Expand All'},
   ];
 
   return (
@@ -44,6 +42,9 @@ export default function HomeScreen() {
               <Text style = {{color: 'white'}}>{item.text}</Text>
             </View>
           ))}
+          <TouchableOpacity style = {styles.countdownContainer}>
+            <Text style = {{color: 'white'}}>Expand All</Text>
+          </TouchableOpacity>
         </View>
       </View>)}
 
@@ -57,6 +58,9 @@ export default function HomeScreen() {
               <Text style = {{color: 'white'}}>{item.text}</Text>
             </View>
           ))}
+          <TouchableOpacity style = {styles.countdownContainer}>
+            <Text style = {{color: 'white'}}>Expand All</Text>
+          </TouchableOpacity>
         </View>
       </View>)}
 
