@@ -8,6 +8,22 @@ export default function HomeScreen() {
     setIsVisible(isVisible);
   }
 
+  const groupData = [
+    {text: 'Spinjitzu Class: 20:00:00:00'}, 
+    {text: 'Fight Serpentine: 22:00:00:00'}, 
+    {text: 'Ghost Whip Karaoke: 27:00:00:00'}, 
+    {text: 'Pirate Whip Karaoke: 29:00:00:00'}, 
+    {text: 'Expand All'},
+  ];
+
+  const allData = [
+    {text: 'Tae Kwon Do Practice: 15:00:00:00'}, 
+    {text: 'Spinjitzu Class: 20:00:00:00'}, 
+    {text: 'Fight Serpentine: 22:00:00:00'}, 
+    {text: 'Weekend Whip Karaoke 2: 24:00:00:00'}, 
+    {text: 'Expand All'},
+  ];
+
   return (
     <View style = {styles.screen}>
       <View style = {styles.navBar}>
@@ -23,21 +39,11 @@ export default function HomeScreen() {
         <Text style = {styles.bigCountdown}>10:00:00:00</Text>
         <Text style = {{fontSize: 20}}>Weekend Whip Karaoke</Text>
         <View style = {styles.allCountdownContainers}>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Spinjitzu Class: 20:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Fight Serpentine: 22:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Ghost Whip Karaoke: 27:00:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Pirate Whip Karaoke: 29:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Expand All</Text>
-          </View>
+          {groupData.map((item, index) => (
+            <View key = {index} style = {styles.countdownContainer}>
+              <Text style = {{color: 'white'}}>{item.text}</Text>
+            </View>
+          ))}
         </View>
       </View>)}
 
@@ -46,21 +52,11 @@ export default function HomeScreen() {
         <Text style = {styles.bigCountdown}>10:00:00:00</Text>
         <Text style = {{fontSize: 20}}>Weekend Whip Karaoke</Text>
         <View style = {styles.allCountdownContainers}>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Tae Kwon Do Practice: 15:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Spinjitzu Class: 20:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Fight Serpentine: 22:00:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Weekend Whip Karaoke 2: 24:00:00:00</Text>
-          </View>
-          <View style = {styles.countdownContainer}>
-            <Text style = {{color: 'white'}}>Expand All</Text>
-          </View>
+          {allData.map((item, index) => (
+            <View key = {index} style = {styles.countdownContainer}>
+              <Text style = {{color: 'white'}}>{item.text}</Text>
+            </View>
+          ))}
         </View>
       </View>)}
 
