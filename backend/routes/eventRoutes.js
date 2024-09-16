@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const eventModel = require('../models/eventModel');
+const userModel = require('../models/userModel');
 
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
@@ -14,7 +15,7 @@ router.post("/create", async (req, res) => {
         return res.status(400).json({"message": "missing some required parameters"});
     }
 
-    if (req.body.creator != req.user.id){
+    if (req.body.creator != req.user._id){
         return res.status(401).json({"message": "creator not the signed-in user"});
     }
 
@@ -48,6 +49,15 @@ router.post("/create", async (req, res) => {
         console.log(err);
         return res.status(500).json({"message": "internal server error"});
     }
+});
+
+router.get("/", async (req, res) => {
+    if (!req.user){
+        return res.status(401).json({"message": "you are not logged in"});
+    }
+
+    const user = await userModel.findById(req.user._id);
+    return res.status(200).json({"events": user.events});
 });
 
 module.exports = router;
