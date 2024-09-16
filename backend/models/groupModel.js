@@ -13,6 +13,10 @@ const groupSchema = mongoose.Schema(
         members: {
             type: Array,
             required: true
+        },
+        events: {
+            type: Array,
+            required: true
         }
     }
 )

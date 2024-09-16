@@ -17,7 +17,19 @@ const eventSchema = mongoose.Schema(
         location: {
             type: String,
             required: false
+        },
+        creator: {
+            type: String,
+            required: true
+        },
+        users: {
+            type: Array,
+            required: true
+        },
+        groups: {
+            type: Array,
+            required: true
         }
     }
 )
-module.exports = mongoose.model("event", userSchema);
+module.exports = mongoose.model("event", eventSchema);
